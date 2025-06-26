@@ -19,7 +19,7 @@ function Explore() {
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const res = await fetch('http://localhost:5000/listings/all');
+        const res = await fetch('http://flatpg-production.up.railway.app/listings/all');
         const data = await res.json();
         setListings(data);
 

@@ -27,7 +27,7 @@ if (!userToken) {
 
     const fetchListing = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/listings/${id}`);
+        const res = await fetch(`http://flatpg-production.up.railway.app/listings/${id}`);
         if (!res.ok) throw new Error('Listing not found');
         const data = await res.json();
         setListing(data);

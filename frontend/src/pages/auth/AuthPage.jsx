@@ -18,7 +18,7 @@ function AuthPage({ mode = 'login' }) {
 
     try {
       const endpoint = isLogin ? '/auth/login' : '/auth/signup';
-      const response = await fetch(`http://localhost:5000${endpoint}`, {
+      const response = await fetch(`http://flatpg-production.up.railway.app${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
