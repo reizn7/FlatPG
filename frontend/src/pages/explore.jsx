@@ -19,7 +19,7 @@ function Explore() {
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const res = await fetch('${import.meta.env.VITE_API_URL}/listings/all');
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/listings/all`);
         const data = await res.json();
         setListings(data);
 
