@@ -1,0 +1,207 @@
+/* ---------- GLOBAL THEME ---------- */
+:root {
+  --primary: #0F172A;
+  --accent: #FF6F61;
+  --bg: #F1F5F9;
+  --text: #0F172A;
+  --glass-bg: hsla(0, 0%, 100%, 0.65);
+  --glass-blur: blur(14px);
+  --card-radius: 16px;
+}
+
+body {
+  background: var(--bg);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ---------- PAGE LAYOUT ---------- */
+.explore-page {
+  padding: 2.5rem 1rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease;
+}
+
+.explore-page h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font: 700 2.8rem/1.1 'Poppins', sans-serif;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.filters-bar {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 3rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+  max-width: 950px;
+}
+
+.filters-bar input,
+.filters-bar select {
+  padding: 0.65rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(106, 90, 224, 0.2);
+  font-size: 0.95rem;
+  background: #fff;
+  color: var(--text);
+  min-width: 180px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.filters-bar input:focus,
+.filters-bar select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 111, 97, 0.25);
+}
+
+@media (max-width: 600px) {
+  .filters-bar {
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+  }
+
+  .filters-bar input,
+  .filters-bar select {
+    min-width: 100%;
+  }
+}
+
+
+/* ---------- CARD GRID ---------- */
+.listing-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ---------- CARD ---------- */
+.listing-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  border: 1px solid rgba(106, 90, 224, 0.1);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.listing-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 24px 60px rgba(106, 90, 224, 0.25);
+}
+
+/* ---------- CARD IMAGE ---------- */
+.listing-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  filter: brightness(0.95);
+  transition: transform 0.4s ease;
+}
+
+.listing-card:hover img {
+  transform: scale(1.03);
+}
+
+/* ---------- CARD BODY ---------- */
+.listing-info {
+  padding: 1.4rem;
+  color: var(--text);
+}
+
+.listing-info h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.listing-info p {
+  margin: 0;
+  color: #59607a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.price {
+  display: block;
+  margin: 1rem 0 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.05rem;
+}
+
+/* ---------- CTA BUTTON ---------- */
+.details-btn {
+  display: inline-block;
+  padding: 0.55rem 1.4rem;
+  font: 500 0.95rem 'Poppins', sans-serif;
+  color: #fff;
+  background: linear-gradient(100deg, var(--primary), var(--accent));
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(106, 90, 224, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.details-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 22px rgba(106, 90, 224, 0.4);
+}
+
+/* ---------- BOTTOM SECTION ---------- */
+.listing-bottom {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  padding: 2rem 1rem;
+  background: #f2f4ff;
+  border-top: 1px solid #ddd;
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+@media (max-width: 500px) {
+  .explore-page {
+    padding: 2rem 0.5rem;
+  }
+
+  .explore-page h2 {
+    font-size: 2.1rem;
+  }
+
+  .listing-card img {
+    height: 190px;
+  }
+}
