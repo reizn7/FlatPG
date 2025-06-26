@@ -34,7 +34,7 @@ function AddListing() {
 
     try {
       const token = localStorage.getItem('sellerToken');
-      const response = await fetch('http://flatpg-production.up.railway.app/listings/addlist', {
+      const response = await fetch('${import.meta.env.VITE_API_URL}/listings/addlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
